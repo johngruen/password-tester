@@ -1,0 +1,1047 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  background-color: #f2f2f2;
+  height: 100%; }
+
+body {
+  color: #424f59;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
+  padding-bottom: 20px; }
+
+a {
+  color: #0095dd;
+  cursor: pointer;
+  /* Use the correct cursor for anchors without an href */ }
+
+a:active {
+  outline: none; }
+
+a:focus {
+  outline: 1px dotted #0095dd; }
+
+a.no-underline {
+  text-decoration: none; }
+
+noscript {
+  color: #d63920;
+  display: block;
+  margin: 160px 0 0 0; }
+
+
+#cloud-logo {
+  background: url(../images/cloudly.png);
+  -webkit-background-size: 90px 90px;
+  background-size: 90px 90px;
+  height: 90px;
+  margin: 0 auto;
+  position: relative;
+  top: 40px;
+  width: 90px;
+  z-index: 999; }
+
+/**
+ * IE < 10 does not support CSS transforms
+ */
+.lt-ie10 #fox-logo {
+  opacity: 1; }
+
+/**
+ * IE7/8 specific hacks to fix the firefox logo
+ */
+.lt-ie9 #fox-logo {
+  background: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/cloudly.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/cloudly.png', sizingMethod='scale')"; }
+
+#fox-logo.static {
+  opacity: 1; }
+
+/**
+* Apply styles to div injected by backbone,
+* rather than to the stage itself
+**/
+.main-content {
+  background: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 5px #8a9ba8;
+  box-shadow: 0 1px 5px #8a9ba8;
+  margin: -5px auto 20px auto;
+  padding: 60px 40px 40px 40px;
+  text-align: center;
+  width:420px;
+ }
+
+.in-content .main-content {
+  margin-top: 85px; }
+
+.js #stage {
+  display: none; }
+
+.lt-ie10 #stage {
+  display: block; }
+
+header h1, header h2, header h3 {
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  line-height: 1em;
+  margin: 0; }
+
+header h1 {
+  font-size: 24px;
+  font-weight: 200;
+  margin: 0 0 32px 0; }
+
+header h1 span.service {
+  display: block;
+  font-size: 18px;
+  font-weight: 200; }
+
+header h2 {
+  font-size: 24px;
+  font-weight: 200; }
+
+#legal-header h2 {
+  margin: 0 0 30px 0;
+  padding: 0; }
+
+#legal-header h3 {
+  font-size: 12px;
+  padding: 5px 0 10px; }
+
+#legal-copy ul, #legal-copy ol {
+  margin-left: 0;
+  padding-left: 20px; }
+
+section p {
+  font-size: 18px; }
+
+section p.prefill {
+  color: #8a9ba8;
+  margin-top: 24px;
+  word-wrap: break-word; }
+
+#legal-copy {
+  text-align: left; }
+
+#legal-copy p {
+  font-size: 14px; }
+
+strong.email {
+  display: block; }
+
+.error, .success {
+  border-radius: 2px;
+  color: #fff;
+  display: none;
+  margin-bottom: 5px;
+  padding: 5px;
+  position: relative;
+  top: -15px; }
+
+.error.visible {
+  display: block; }
+
+.error {
+  background: #d63920; }
+
+.error a {
+  color: #fff; }
+
+.browsehappy {
+  display: block; }
+
+.success {
+  background: #5fad47;
+  display: none; }
+
+.complete {
+  display: none; }
+
+.graphic {
+  background-repeat: no-repeat;
+  -webkit-background-size: 150px 130px;
+  background-size: 150px 130px;
+  height: 130px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 150px; }
+
+.graphic-checkbox {
+  background-image: url(../images/graphic_checkbox.png); }
+
+.graphic-mail {
+  background-image: url(../images/graphic_mail.png);
+  margin-bottom: 25px;
+  padding-bottom: 10px; }
+
+.input-row {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%; }
+  .input-row button, .input-row input, .input-row select {
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.tooltip {
+  background: #d63920;
+  border-radius: 2px;
+  color: #fff;
+  left: 3px;
+  padding: 5px 12px;
+  position: absolute;
+  top: -32px;
+  white-space: nowrap;
+  z-index: 5; }
+
+/* tooltip caret */
+.tooltip:before, .tooltip::before {
+  background: #d63920;
+  content: '.';
+  height: 16px;
+  left: 12px;
+  position: absolute;
+  text-indent: -999px;
+  top: 21px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  white-space: nowrap;
+  width: 16px;
+  z-index: -1; }
+
+html[dir='rtl'] .tooltip:before, html[dir='rtl'] .tooltip::before {
+  top: 19px; }
+
+/**
+ * these are caret's attached to tooltips that hang below the
+ * input element. The tooltip's top is set via JS.
+ */
+html[dir='rtl'] .tooltip-below:before, html[dir='rtl'] .tooltip-below::before, .tooltip-below:before, .tooltip-below::before {
+  top: -7px; }
+
+.input-row input[type='text'], .input-row input[type='email'], .input-row input[type='password'], .input-row select {
+  background-color: #fff;
+  border: 1px solid #8a9ba8;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px #f2f2f2;
+  box-shadow: inset 0 1px 1px #f2f2f2;
+  color: #424f59;
+  font-size: 18px;
+  height: 45px;
+  outline: none;
+  padding: 0 20px;
+  position: relative;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
+  /*kills inset shadow on ios browsers*/
+  -webkit-appearance: none;
+  width: 100%;
+  z-index: 2; }
+
+.input-row input::-webkit-input-placeholder {
+  color: #8a9ba8; }
+
+.input-row input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #8a9ba8; }
+
+.input-row input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #8a9ba8; }
+
+.input-row input:-ms-input-placeholder {
+  color: #8a9ba8; }
+
+.input-row select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url(../images/ddarrow_inactive.png) 96% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 10px 17px;
+  background-size: 10px 17px;
+  color: #8a9ba8;
+  height: auto;
+  outline: none;
+  padding: 10px 20px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%; }
+
+.input-row:hover input {
+  border-color: #424f59; }
+
+.input-row input:focus, .input-row select:focus {
+  border-color: #0095dd;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-property: border-color;
+  transition-property: border-color; }
+
+.input-row select:hover, .input-row select:hover:active, .input-row select:focus {
+  background-image: url(../images/ddarrow_active.png);
+  background-color: #f2f2f2;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-property: all;
+  transition-property: all; }
+
+.input-row option {
+  background-color: #fff; }
+
+.input-row input:hover, .input-row select:hover, .input-row:hover input:hover, .input-row:hover select:hover {
+  border-color: #424f59;
+  outline: none; }
+
+.input-row input:focus, .input-row select:focus, .input-row:hover input:focus, .input-row:hover select:focus, .input-row:focus input {
+  border-color: #0095dd;
+  color: #424f59;
+  outline: none; }
+
+.input-row input[type='text'].invalid, .input-row input[type='email'].invalid, .input-row input[type='password'].invalid, .input-row input[type='text'].invalid ~ .show-password-label, .input-row input[type='password'].invalid ~ .show-password-label, .input-row select.invalid,textarea.invalid {
+  border-color: #d63920; }
+
+/**
+ * Firefox show a focus ring around the selected text.
+ * See issue https://github.com/mozilla/fxa-content-server/issues/459
+ * and the solution at:
+ * http://stackoverflow.com/questions/19468372/how-to-remove-dashed-border-of-select-box-in-firefox#answer-19468615
+ */
+.input-row select:-moz-focusring {
+  color: transparent !important;
+  /* !important must be added or else the browser ignores the request */
+  text-shadow: 0 0 0 #424f59 !important; }
+
+.input-row:last-child {
+  margin-bottom: 0; }
+
+.input-row .input-help {
+  color: #8a9ba8;
+  margin-top: 8px; }
+
+.input-row .input-help-focused {
+  opacity: 1;
+  -webkit-transition-duration: 450ms;
+  transition-duration: 450ms;
+  -webkit-transition-property: opacity;
+  transition-property: opacity; }
+
+/**
+ * The label:active and :focus selectors are added
+ * to eliminate flicker when the user holds the mouse
+ * key down over top of teh "show/hide" password button.
+ */
+input:focus ~ .input-help-focused, label:active ~ .input-help-focused, label:focus ~ .input-help-focused {
+  opacity: 1; }
+
+/**
+* The select-row works as a hacky fix for FF30's regression on
+* select list skinning. If ff fixes. the following css can be removed
+* and all .select-rows can be replaced with input rows*
+*/
+.select-row-wrapper {
+  position: relative; }
+
+.select-row {
+  background: #fff url(../images/ddarrow_inactive.png) 96% center no-repeat;
+  border-radius: 4px;
+  border: 1px solid #8a9ba8;
+  cursor: pointer;
+  height: 45px;
+  overflow: hidden;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
+  width: 100%; }
+
+.select-row:hover {
+  border-color: #424f59;
+  background-image: url(../images/ddarrow_active.png); }
+
+.select-row select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  color: #8a9ba8;
+  cursor: pointer;
+  font-size: 18px;
+  height: auto;
+  outline: none;
+  padding: 9px 10% 9px 20px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 90%; }
+
+.select-row:hover select {
+  color: #424f59; }
+
+.select-row.select-focus {
+  background-color: #f2f2f2;
+  background-image: url(../images/ddarrow_active.png);
+  border-color: #0095dd; }
+
+.select-row.select-focus select {
+  color: #424f59; }
+
+.select-row.invalid-row {
+  border-color: #d63920; }
+
+.select-row select option {
+  background-color: #fff; }
+
+/**
+ * Override the default blue highlight for IE10+
+ */
+.select-row select::-ms-value {
+  background: none; }
+
+.select-row select:focus::-ms-value {
+  color: #424f59; }
+
+.select-row select:-moz-focusring {
+  color: transparent !important;
+  /* !important must be added or else the browser ignores the request */
+  text-shadow: 0 0 0 #424f59 !important; }
+
+/*end select row rules*/
+.button-row {
+  margin-bottom: 20px;
+  margin-top: 45px; }
+
+.button-row button, .button-row a.button {
+  background: #0095dd;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  padding: 15px 0;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  width: 100%; }
+
+.button-row a.button {
+  display: inline-block;
+  text-decoration: none; }
+
+.button-row a.button:active, .button-row a.button:hover, .button-row a.button:focus, .button-row button:active, .button-row button:hover, .button-row button:focus {
+  background: #08c; }
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* Custom rows */
+.input-row-month-day select {
+  width: 45%; }
+
+.description {
+  font-size: 18px; }
+
+.links {
+  margin-bottom: 20px;
+  overflow: auto;
+  /* the 1px of padding allows the :focus outline on anchors to show. */
+  padding: 1px; }
+
+ul.links {
+  list-style: none;
+  padding: 0; }
+
+ul.links li {
+  margin: 12px 0;
+  padding: 0; }
+
+.links a {
+  text-decoration: none; }
+
+.links a:hover {
+  text-decoration: underline; }
+
+.links .left {
+  float: left; }
+
+.links .right {
+  float: right; }
+
+.privacy-links, .privacy-links a {
+  color: #8a9ba8;
+  margin-top: 35px;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms; }
+
+.privacy-links + .button-row {
+  margin-top: 20px; }
+
+.privacy-links a:active, .privacy-links a:hover, .privacy-links a:focus {
+  color: #0095dd; }
+
+.verification-email-message, .signed-in-email-message {
+  word-wrap: break-word; }
+
+.password-row {
+  position: relative; }
+
+/*
+ * The password class is used instead of type because the field's type can
+ * change from password to text.
+ */
+.password-row input[type='password'], .password-row input[type='text'] {
+  padding-right: 75px; }
+
+/**
+ * The addition of right, top, border-radius, and background-color are
+ * all to fix a bug in firefox 29 where the right padding of the password
+ * field is ignored and password text flows under the show/hide button. When
+ * Firefox is fixed, top and right can be set to 0, height set to 44px,
+ * border-radius and background-color removed.
+ *
+ * See https://bugzilla.mozilla.org/show_bug.cgi?id=965237
+ */
+.password-row .show-password-label {
+  background-color: #fff;
+  border-left: 1px solid #8a9ba8;
+  border-radius: 0 4px 4px 0;
+  color: #8a9ba8;
+  cursor: pointer;
+  font-size: 14px;
+  height: 43px;
+  line-height: 42px;
+  min-width: 55px;
+  padding: 0 7px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 3; }
+
+.password-row > .password:hover {
+  border-color: #424f59; }
+
+.show-password-label {
+  border-color: #424f59; }
+
+/**
+ * The checkboxes are keyboard accessible, the label is placed as a sibling
+ * to the checkbox. The checkbox cannot be hidden or set to `display: none` or
+ * else it is impossible to focus the element using the keyboard. Instead, we
+ * give it an absolute position and set its opacity to 0. Whenever tabbed to
+ * using the keyboard, the label acts as if the mouse were hovering over the
+ * label.
+ */
+.show-password {
+  opacity: 0;
+  position: absolute; }
+
+/**
+ * IE8 blows up when changing the type of the password field
+ * to a text field. Hide the show/hide button and reset
+ * the password field's padding.
+ */
+.no-toggle-pw .password-row input[type='password'], .reveal-pw .password-row input[type='password'] {
+  padding-right: 20px; }
+.no-toggle-pw .show-password-label, .no-toggle-pw .show-password, .reveal-pw .show-password-label, .reveal-pw .show-password {
+  display: none; }
+
+/* IE8 has trouble rendering bullet characters with custom fonts,
+ * so use something standard */
+.lt-ie9 input[type="password"] {
+  font-family: sans-serif; }
+
+.show-password-label:hover, .show-password-label:active, .show-password-label:focus, .show-password:hover + .show-password-label, .show-password:active + .show-password-label, .show-password:focus + .show-password-label {
+  background: #f2f2f2;
+  color: #424f59;
+  outline: none; }
+
+/* this one is impossible to do w/o sibling selector
+we may need to add js for IE8*/
+.password:focus ~ .show-password-label {
+  border-left-color: #0095dd; }
+
+input[type="text"] ~ .show-password-label {
+  background: #8a9ba8;
+  color: #fff; }
+
+/**
+ * Hover over the show password label in its dark state
+ */
+input[type="text"] ~ .show-password:focus + .show-password-label, input[type="text"] ~ .show-password:active + .show-password-label, input[type="text"] ~ .show-password:hover + .show-password-label, input[type="text"] ~ .show-password-label:focus, input[type="text"] ~ .show-password-label:active, input[type="text"] ~ .show-password-label:hover {
+  background: #9aabb8;
+  color: #fff; }
+
+.customize-sync-row {
+  color: #8a9ba8;
+  margin-bottom: 20px !important; }
+
+.links + .privacy-links {
+  margin: 20px 0 15px 0; }
+
+.cannot-create-account-content {
+  margin-top: 105px; }
+
+.change-password .password-row, .complete_reset_password .password-row {
+  margin-bottom: 25px; }
+
+.label-helper {
+  border-radius: 2px;
+  color: #8a9ba8;
+  font-size: 12px;
+  font-weight: normal;
+  height: 16px;
+  margin: 0 10px;
+  position: absolute;
+  top: 0;
+  z-index: 1; }
+
+.spinner {
+  -webkit-animation: 0.9s spin infinite linear;
+  animation: 0.9s spin infinite linear;
+  background-image: url(../images/spinnerlight.png);
+  -webkit-background-size: 36px 36px;
+  background-size: 36px 36px;
+  display: block;
+  height: 36px;
+  margin: 130px auto 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 36px; }
+
+.spinner-white {
+  -webkit-animation: 0.9s spin infinite linear;
+  animation: 0.9s spin infinite linear;
+  background-image: url(../images/spinnerwhite.png);
+  -webkit-background-size: 33px 33px;
+  background-size: 33px 33px;
+  display: block;
+  height: 33px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 33px; }
+
+.hidden {
+  display: none; }
+
+.marketing {
+  background-color: #f2f2f2;
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid #c3cfd8;
+  -webkit-box-shadow: 0 1px 1px #fff inset;
+  box-shadow: 0 1px 1px #fff inset;
+  font-size: 18px;
+  margin: 60px -40px -40px -40px;
+  position: relative; }
+  .marketing.image-snippet {
+    padding: 28px 160px 28px 50px;
+    text-align: left; }
+  .marketing.text-snippet {
+    padding: 28px 20px 36px 20px;
+    text-align: center; }
+  .marketing .marketing-copy {
+    display: block; }
+  .marketing .android-logo {
+    background: url(../images/android_logo.png);
+    -webkit-background-size: 84px 74px;
+    background-size: 84px 74px;
+    bottom: 0;
+    display: block;
+    height: 74px;
+    position: absolute;
+    right: 50px;
+    width: 84px; }
+  .marketing a {
+    text-decoration: none; }
+  .marketing a:hover {
+    text-decoration: underline; }
+
+.reset-warning {
+  font-size: 12px;
+  font-weight: normal; }
+
+div + .success, div + .error {
+  margin-top: 10px; }
+
+.avatar-wrapper img {
+  width: 240px;
+  height: 240px;
+  display: block; }
+
+.avatar-wrapper img.default {
+  background-image: url(../images/avatar.jpg);
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.avatar-wrapper {
+  position: relative;
+  overflow: hidden; }
+
+.avatar-wrapper video {
+  position: relative; }
+
+#fxa-settings-sub-header {
+  font-size: 18px;
+  padding-bottom: 5px;
+  font-weight: normal; }
+
+#fxa-settings-sub-header a {
+  text-decoration: none;
+  font-size: 88%; }
+
+.notice {
+  font-size: 14px;
+  color: #8a9ba8; }
+
+.main-avatar {
+  position: relative; }
+
+.main-avatar .remove {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-decoration: none; }
+
+/* Circle Avatar Styles */
+.avatar-wrapper {
+  line-height: 0;
+  display: inline-block;
+  margin: 0px 0px 5px;
+  border-radius: 50%;
+  border-width: 0px;
+  height: 240px;
+  width: 240px; }
+
+.avatar-wrapper video {
+  border-radius: 50%; }
+
+a.avatar-wrapper {
+  color: transparent; }
+
+/* IE fix: removes blue border */
+.avatar_camera canvas {
+  display: none; }
+
+.avatar_change nav {
+  padding: 20px; }
+
+.avatar_change nav a {
+  padding: 11px;
+  text-decoration: none;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  line-height: 1.1;
+  margin: 5px;
+  border-radius: 50%; }
+
+.avatar_change nav span {
+  font-size: 35px; }
+
+.avatar_change nav span:after {
+  content: '\A';
+  white-space: pre; }
+
+.avatar_change nav {
+  margin: 60px -40px -40px -40px;
+  background-color: #f2f2f2;
+  border-radius: 4px; }
+
+.avatar_change .gravatar-logo {
+  background: url(../images/gravatar.svg) no-repeat top center;
+  background-image: url(/../images/gravatar.svg);
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 39px;
+  height: 39px;
+  display: inline-block; }
+
+.cropper .wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+  width: 420px;
+  margin: 0px -40px; }
+.cropper .mask {
+  background: url(../images/crop-mask.svg);
+  position: relative;
+  height: 240px;
+  width: 240px;
+  top: 0px;
+  left: 90px;
+  z-index: 1; }
+.cropper .mask:before, .cropper .mask:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 240px;
+  width: 90px;
+  top: 0px;
+  z-index: 1; }
+.cropper .mask:before {
+  left: -90px; }
+.cropper .mask:after {
+  right: -90px; }
+.cropper .drag-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: move;
+  z-index: 3;
+  height: 100%;
+  width: 100%; }
+.cropper .wrapper img {
+  position: absolute; }
+.cropper canvas {
+  display: none; }
+.cropper .zoom-in, .cropper .zoom-out {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #8a9ba8; }
+.cropper .rotate {
+  background: transparent;
+  border: 0;
+  color: #0095dd; }
+.cropper .zoom-in, .cropper .zoom-out, .cropper .rotate {
+  font-size: 20px; }
+
+/* Keyframes */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+@keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes fade-up-tt {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fade-up-tt {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-webkit-keyframes fade-down-tt {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fade-down-tt {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@-webkit-keyframes fade-down-logo {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fade-down-logo {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px); } }
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px); } }
+
+.shake {
+  -webkit-animation: shake 1050ms;
+  animation: shake 1050ms; }
+
+.fadein {
+  -webkit-animation: fadein 1050ms;
+  animation: fadein 1050ms; }
+
+.fade-down-logo {
+  -webkit-animation: fade-down-logo 1050ms;
+  animation: fade-down-logo 1050ms; }
+
+.fade-down-tt {
+  -webkit-animation-name: fade-down-tt;
+  animation-name: fade-down-tt;
+  -webkit-animation-duration: 450ms;
+  animation-duration: 450ms; }
+
+.fade-up-tt {
+  -webkit-animation-name: fade-up-tt;
+  animation-name: fade-up-tt;
+  -webkit-animation-duration: 450ms;
+  animation-duration: 450ms; }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 450ms;
+  animation-duration: 450ms; }
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #cloud-logo {
+    background-image: url(../images/cloudly@2x.png); }
+  .graphic-checkbox {
+    background-image: url(../images/graphic_checkbox@2x.png); }
+  .graphic-mail {
+    background-image: url(../images/graphic_mail@2x.png); }
+  .spinner {
+    background-image: url(../images/spinnerlight@2x.png); }
+  .spinner-white {
+    background-image: url(../images/spinnerwhite@2x.png); }
+  .input-row select {
+    background-image: url(../images/ddarrow_inactive@2x.png); }
+  .input-row select:focus {
+    background-image: url(../images/ddarrow_active@2x.png); }
+  #about-mozilla {
+    background-image: url(../images/mozilla@2x.png); }
+  .marketing .android-logo {
+    background-image: url(../images/android_logo@2x.png); } }

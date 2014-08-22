@@ -1,0 +1,29 @@
+<div class="main-content" id="confirm_password">
+
+  <header>
+    <h1 id="fxa-signup-header">
+        Confirm Your Password
+    </h1>
+  </header> 
+  
+  <section>
+    <p>On a previous screen, you created a password for your Cloudly account.</p>
+    <p>Please re-enter your Cloudy password below.</p>
+    
+    <div class="error"></div>
+    
+    <div class="input-row password-row">
+      <input id="password" type="password" class="password tooltip-below" placeholder="Password" value="" pattern=".8," required autocomplete="off" autofocus />
+      <input id="show-password" type="checkbox" class="show-password" aria-controls="password" tabindex="-1" data-novalue />
+      <label for="show-password" class="show-password-label">
+        Show
+      </label>
+    </div>
+
+    <div class="button-row">
+      <button id="submit-btn">Next</button>
+    </div>
+
+  </section>
+
+</div>

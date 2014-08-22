@@ -1,0 +1,381 @@
+strong {
+    font-weight: bold;
+}
+
+.survey-element {
+    background: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 0 24px 0;
+    padding: 15px;
+}
+
+.survey-element p {
+    border-bottom: 1px dotted #ccc;
+    font-size: 14px;
+    margin: 0 0 .75em 0;
+    padding: 0 0 .75em 0;
+}
+
+.likert ul {
+    background: none;
+    clear:both;
+    height:32px;
+    list-style-type: none;
+    margin: 0 -15px;
+    padding: 0;
+}
+
+.likert li {
+    display: block;
+    float: left;
+    font-size:12px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width:10%;
+}
+
+.likert li label {
+        text-align: center;
+}
+
+.likert .text {
+    text-align: center;
+    width:25%;
+}
+
+.likert li input {
+    display: block;
+    margin: 4px auto 0 auto;
+}
+
+.survey-element label {
+    display: inline-block;
+    text-align: left;
+    width:80%;
+}
+
+
+.survey-element input[type='text'] {
+    border-radius: 2px;
+    float: right;
+    font-size: 14px;
+    height:27px;
+    margin:6px 0 0 0;
+    padding:2px;
+    text-align: right;
+    width:10%;
+}
+
+textarea{
+    resize: none;
+    width: 100%;
+}
+
+
+.modal .button-row {
+    margin: 0;
+}
+
+
+.flow label,
+.modal label {
+    display: block;
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+
+.modal label {
+    font-size:11px;
+}
+
+.modal .bunch {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 0 0 10px 0;
+    font-size:12px;
+}
+
+.modal .button-row button, .modal .button-row .button {
+    border-radius: 2px;
+    font-size: 16px;
+    margin:0;
+    padding: 8px 0;
+}
+
+.modal .input-row input[type='text'], .modal .input-row input[type='email'],.modal .input-row input[type='password'], .input-row select, textarea {
+    border-radius: 2px;
+    font-size: 14px;
+    height: 30px;
+    margin: 0 0 0 0;
+    padding: 5px;
+}
+
+.survey-element textarea {
+    height:60px;
+}
+
+.modal .input-row, .modal .input-help {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.modal input {
+ font-size: 12px;
+}
+
+.modal .button-row {
+    margin-top: 0;
+}
+
+.modal p {
+    font-size: 14px;
+    margin:0 0 10px 0;
+}
+
+#pp_holder {
+    left: 10px;
+    position: absolute;
+    top:10px;
+}
+
+#mne_holder {
+    left:360px;
+    position: absolute;
+    top:10px;
+}
+
+.flow .input-row .ppi_1,
+.flow .input-row .ppi_1:hover,
+.modal .input-row .ppi_1,
+.modal .input-row .ppi_1:hover
+ {
+    background: #fff;
+    background: #FEF7E5;
+    border:1px solid #FF9500;
+}
+
+.flow .input-row .ppi_2,
+.flow .input-row .ppi_2:hover,
+.modal .input-row .ppi_2,
+.modal .input-row .ppi_2:hover {
+
+    background: #fff;
+    background: #FDF9E5;
+    border:1px solid #EEBB00;
+}
+
+.flow .input-row .ppi_3,
+.flow .input-row .ppi_3:hover,
+.modal .input-row .ppi_3,
+.modal .input-row .ppi_3:hover {
+    background: #fff;
+    background: #F0F8EB;
+    border: 1px solid #74BF43;
+}
+
+.modal {
+    display: none;
+}
+
+.replace {
+    display: none;
+}
+
+#sheet {
+    background: #fff;
+    bottom:0;
+    display: none;
+    left:0;
+    position: absolute;
+    opacity: .9;
+    right:0;
+    top:0;
+    z-index: 888;
+}
+
+#cloud-logo {
+    z-index: 777;
+}
+
+.password-row {
+    border-radius: 4px;
+    position: relative;
+    z-index: 889;
+}
+
+.modal-wrapper {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px #8a9ba8;
+    display: inline-block;
+    left:290px;
+    margin-left:10px;
+    padding:20px;
+    position:absolute;
+    top:-250px;
+    width: 260px;
+    z-index: 900;
+}
+
+#test-wrapper:after {
+    background-color: #fff;
+    box-shadow: 0 1px 5px #8a9ba8;
+    content: '';
+    height:20px;
+    left:290px;
+    position: absolute;
+    top:10px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    width:20px;
+    z-index: 900;
+}
+
+#test-wrapper:before {
+    background-color: #fff;
+    content:'';
+    height:50px;
+    left:300px;
+    position:absolute;
+    top:-10px;
+    width:15px;
+    z-index: 901;
+}
+
+
+.ta_sim {
+    border-radius: 2px;
+    border: 1px solid #aaa;
+    padding:10px;
+    background: #fff;
+    min-height:68px;
+
+}
+
+.ta_sim span {
+    color: #8a9ba8;
+    display: inline-block;
+        font-size:16px;
+}
+.ta_sim span::first-letter {
+    font-weight: bold;
+    color: #0A0;
+}
+
+#debug {
+    background: #000;
+    bottom: 0;
+    color: #fff;
+    font-family: monospace;
+    opacity: .80;
+    padding:5px;
+    position: fixed;
+    right: 0;
+    width:300px;
+}
+
+.invalid-row {
+    border: 1px solid #d63920;
+}
+
+#test-wrapper {
+    display: none;
+    position: relative;
+}
+
+.input-help {
+    color: #8a9ba8;
+}
+
+.loader {
+    text-align: center;
+}
+
+.intro {
+    font-size: 18px;
+}
+
+.intro-tweak {
+    font-size: 16px;
+}
+
+#consent {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px #8a9ba8;
+    margin: -5px auto 20px auto;
+    padding: 60px 40px 40px 40px;
+    width: 814px;
+}
+
+#consent p {
+    font-size: 14px;
+}
+
+#consent header {
+    text-align: center;
+}
+
+#demog_1, #demog_2 {
+    text-align: left;
+}
+
+#demog_1 ul, #demog_2 ul {
+    list-style: none;
+    padding:0;
+}
+
+#demog_1 ul li, #demog_2 ul li {
+    margin: 0 0 10px 0;
+}
+
+.bunch {
+    border: 1px solid #ccc;
+    padding:15px;
+    border-radius: 2px;
+    background: #fafafa
+}
+
+.bunch input[type='text'] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.flow .button-row {
+    margin-top:20px;
+}
+
+.mne-textarea {
+    padding:10px;
+    height:70px;
+    text-align: center;
+    font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    margin: 0 0 14px 0;
+    font-size:16px;
+}
+
+.add-a-word {
+    cursor:pointer;
+    color: #0095dd;
+    display: block;
+    margin:5px 0;
+}
+
+.flow-hidden {
+    display: none;
+}
+
+.label-error {
+  border-radius: 2px;
+  color: #fff;
+  display: none;
+  margin: 5px 0px;
+  padding: 5px;
+  position: relative;
+  text-align: center !important;
+  background: #d63920;
+ }

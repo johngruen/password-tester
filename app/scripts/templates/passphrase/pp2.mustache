@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="flow passphrase" id="pp_3">
+    
+    <p label class="intro">Now you can make your own passphrase by entering words into the boxes below.</p>
+    <div class='bunch'>
+      <label>Your passphrase must have at least 4 words.</label>
+      <div class="pp-gen-wrapper">
+          <div class="input-row pp-gen">
+            <input type="text" maxlength="10" placeholder="first word"/>
+          </div>
+
+          <div class="input-row pp-gen">
+            <input type="text" maxlength="10" placeholder="second word"/>
+          </div>
+
+          <div class="input-row pp-gen">
+            <input type="text" maxlength="10" placeholder="third word"/>
+          </div>
+
+          <div class="input-row pp-gen">
+            <input type="text" maxlength="10" placeholder="fourth word"/>
+          </div>
+      </div>
+      <span class="add-a-word">+ add a word</span>
+      <div class="flow-hidden">
+
+      <label>These words become a passphrase:</label>
+
+      <div class="input-row">
+        <input type="text" class="ppi_1" value="correct horse battery staple" disabled="true" />
+      </div>
+
+        <label>Avoid spaces to make it stronger:</label>
+
+      <div class="input-row">
+        <input type="text" class="ppi_2" value="correct%horse%battery%staple"disabled="true" />
+      </div>
+
+      <label>For extra strength, mix in numbers and symbols:</label>
+
+      <div class="input-row">
+        <input type="text" class="email ppi_3" value="c0rrect%horse%b@ttery%stap1e" disabled="true" />
+      </div>
+
+      </div>
+    
+    </div>
+
+    <p class="intro flow-hidden">Click Next to use your passphrase</p>
+    
+    <div class="button-row">
+      <button id="submit-btn">Next</button>
+    </div>
+
+  </div>
+</div>

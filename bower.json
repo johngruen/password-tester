@@ -1,0 +1,25 @@
+{
+  "name": "req-tester",
+  "version": "0.0.0",
+  "authors": [
+    "johngruen <john.gruen@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/public/js/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.14",
+    "jquery": "~2.1.1",
+    "mustache": "~0.8.2",
+    "requirejs-mustache": "*",
+    "requirejs-text": "~2.0.12",
+    "backbone": "~1.1.2",
+    "string": "~1.9.1"
+  }
+}
