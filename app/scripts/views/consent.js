@@ -16,7 +16,23 @@ define([
     template: consentTemplate,
 
     afterRender: function() {
+      var socket = io.connect();
+      socket.emit('requestType');
+      socket.on('version',function(data){
+        UserMetadata.version = data;
+      });
+    var psid = this.getParameterByName('psid');
+    if(psid) {
+      UserMetadata.psid = psid;
+    }
     },
+    
+    getParameterByName:function (name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+   },
 
     validateRadio: function(els) {
       var allClear = 0;

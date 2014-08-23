@@ -1,25 +1,39 @@
+//NONONONONO
 var express= require('express');
 var app = express();
+var path = require('path');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require('fs');
 var url = require('url');
+var users = [];
 
-app.use(express.static(__dirname + '/app'));
 
-app.get('/:something',function(req,res){
+app.get('/',function(req,res){
+ console.log(req.url);
  console.log(req.query);
+  if(req.query.psid || req.query.test) {
+    if(req.query.psid) {
+      users.push(req.query.psid);
+    }
+    res.sendFile(__dirname + '/index.html');
+  }
+  else {
+   res.sendFile(__dirname + '/fail.html');
+  }
+
 });
 
-
+app.use(express.static(__dirname));
 
 app.get('*', function(req, res){
-  console.log(req.query);
-  res.sendFile(__dirname + '/app/index.html');
+  console.log(req.url);
+  res.sendFile(__dirname + '/index.html');
 });
 
 
 var keys = [
+      'psid',
       'version',
       'passwordLength',
       'flowPasswordMatches',
@@ -65,9 +79,9 @@ var keyString = keys.join(',');
 var totalSuccess = 0;
 var typeCount = [0,0,0];
 
-fs.writeFile('app/data/version0.txt',keyString +  ',');
-fs.writeFile('app/data/version1.txt',keyString  + ',');
-fs.writeFile('app/data/version2.txt',keyString  + ',');
+fs.writeFile('data/version0.txt',keyString +  ',');
+fs.writeFile('data/version1.txt',keyString  + ',');
+fs.writeFile('data/version2.txt',keyString  + ',');
 writeSuccessFile();
 
 
@@ -90,7 +104,7 @@ function generateType() {
 }
 
 function writeSuccessFile() {
-  fs.writeFile('app/data/count.txt', totalSuccess + "/ " + typeCount.join(','));
+  fs.writeFile('data/count.txt', totalSuccess + "/ " + typeCount.join(','));
 }
 
 function incSuccess(i) {
@@ -111,7 +125,7 @@ io.on('connection',function(socket){
 
   socket.on('sendControlData',function(data){
     var dataString = data + ',';
-    fs.appendFile('app/data/version0.txt',dataString,function(err) {
+    fs.appendFile('data/version0.txt',dataString,function(err) {
       if(err) {
         console.log('error');
         socket.emit('error');
@@ -125,7 +139,7 @@ io.on('connection',function(socket){
 
   socket.on('sendPassphraseData',function(data){
     var dataString = data + ',';
-    fs.appendFile('app/data/version1.txt',dataString,function(err) {
+    fs.appendFile('data/version1.txt',dataString,function(err) {
       if(err) {
         console.log('error');
         socket.emit('error');
@@ -141,7 +155,7 @@ io.on('connection',function(socket){
 
   socket.on('sendMnemonicData',function(data){
     var dataString = data + ',';
-    fs.appendFile('app/data/version2.txt',dataString,function(err) {
+    fs.appendFile('data/version2.txt',dataString,function(err) {
       if(err) {
         console.log('error');
         socket.emit('error');
@@ -159,5 +173,5 @@ io.on('connection',function(socket){
 });
 
 
-server.listen(3000);
+server.listen(3001);
 

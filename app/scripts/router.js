@@ -117,14 +117,11 @@ function (
 
       //do async stuff
       var router;
-      var socket = io.connect();
-      socket.emit('requestType');
-      socket.on('version',function(data){
-        UserMetadata.version = data;
-        router = new BigRouter();
-        router.name = 'my router';
+
+      router = new BigRouter();
+      router.name = 'my router';
+        
         Backbone.history.start({pushState:true});
-      });
       $.ajax({
             url: "./data/common.txt",
             async: false,
