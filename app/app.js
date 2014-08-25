@@ -23,17 +23,18 @@ app.get('/',function(req,res){
 
 });
 
-app.use(express.static(__dirname));
+ app.use(express.static(__dirname));
 
-app.get('*', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+// app.get('*', function(req, res){
+//   res.sendFile(__dirname + '/index.html');
+// });
 
 
 var keys = [
       'psid',
       'version',
       'passwordLength',
+      'pwdPasted',
       'flowPasswordMatches',
       'chunks',
       'totalLowerCase',
@@ -44,6 +45,7 @@ var keys = [
       'longestCommonSubStrs',
       'pwdStateChanged',
       'pwdStateFinal',
+      'confirmPwdPasted',
       'confirmPwdChanged',
       'confirmPwdStateFinal',
       'confirmPwdMatch',

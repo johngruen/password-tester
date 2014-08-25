@@ -14,6 +14,7 @@ define([
       'psid',
       'version',
       'passwordLength',
+      'pwdPasted',
       'flowPasswordMatches',
       'chunks',
       'totalLowerCase',
@@ -24,6 +25,7 @@ define([
       'longestCommonSubStrs',
       'pwdStateChanged',
       'pwdStateFinal',
+      'confirmPwdPasted',
       'confirmPwdChanged',
       'confirmPwdStateFinal',
       'confirmPwdMatch',
@@ -56,6 +58,7 @@ define([
       // UserMetadata.psid = 666;
       // UserMetadata.version = 0;
       // UserMetadata.passwordLength=2;
+      // UserMetadata.pwdPasted=1;
       // UserMetadata.flowPasswordMatches=3;
       // UserMetadata.chunks=4;
       // UserMetadata.totalLowerCase=5;
@@ -66,6 +69,7 @@ define([
       // UserMetadata.longestCommonSubStrs=10;
       // UserMetadata.pwdStateChanged=11;
       // UserMetadata.pwdStateFinal=12;
+      // UserMetadata.confirmPwdPasted=0;
       // UserMetadata.confirmPwdChanged=13;
       // UserMetadata.confirmPwdStateFinal=14;
       // UserMetadata.confirmPwdMatch=15;

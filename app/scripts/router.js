@@ -133,7 +133,7 @@ function (
       router = new BigRouter();
       router.name = 'my router';
         
-        Backbone.history.start({pushState:true});
+        Backbone.history.start({});
       $.ajax({
             url: "./data/common.txt",
             async: false,

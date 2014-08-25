@@ -16,7 +16,8 @@ define([
       'focus .invalid,.invalid-row': 'clearInvalidEl',
       'change .show-password': 'recordPasswordVisibilityChange',
       'focus #password,#show-password': 'triggerPopUp',
-      'click .flow-start':'triggerFlow'
+      'click .flow-start':'triggerFlow',
+      'input.password':'recordPaste'
     },
 
     template: signupTemplate,
@@ -36,6 +37,10 @@ define([
         this.$el.find("#passphrase").remove();
       }
       this.initFlow();
+    },
+
+    recordPaste: function() {
+      UserMetadata.pwdPasted = 1;
     },
 
     triggerPopUp: function() {
@@ -88,6 +93,9 @@ define([
     },
 
     generateData: function(pwd,coppa) {
+      if(!UserMetadata.pwdPasted) {
+        UserMetadata.pwdPasted = 0;
+      }
       if(!UserMetadata.chunks) {
         UserMetadata.chunks = 0;
       }

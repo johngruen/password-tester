@@ -12,10 +12,15 @@ define([
       'click #submit-btn':'submit',
       'change .show-password': 'recordPasswordVisibilityChange',
       'click .invalid': 'clearInvalidEl',
-      'focus .invalid': 'clearInvalidEl'
+      'focus .invalid': 'clearInvalidEl',
+      'input.password':'recordPaste'
     },
 
     template: confirmTemplate,
+
+    recordPaste: function() {
+      UserMetadata.confirmPwdPasted = 1;
+    },
 
     recordPasswordVisibilityChange: function(event) {
       this.onPasswordVisibilityChange(event);
@@ -23,6 +28,9 @@ define([
     },
 
     generateData: function(pwd) {
+      if(!UserMetadata.confirmPwdPasted) {
+        UserMetadata.confirmPwdPasted = 0;
+      }
       if(!UserMetadata.confirmPwdChanged) {
         UserMetadata.confirmPwdChanged = 0;
       }
