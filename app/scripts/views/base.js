@@ -41,7 +41,7 @@ function(_,$,Backbone) {
     },
 
     destroy: function() {
-      this.$el.fadeOut(1000);
+      //this.$el.fadeOut(1000);
       this.remove();
     },
 

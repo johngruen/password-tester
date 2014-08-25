@@ -11,6 +11,7 @@ var users = [];
 
 
 app.get('/',function(req,res){
+  console.log("hello from the server");
   if(req.query.psid || req.query.test) {
     if(req.query.psid) {
       users.push(req.query.psid);
