@@ -15,10 +15,6 @@ define([
       'focus .invalid': 'clearInvalidEl'
     },
 
-    afterRender: function() {
-      alert("YA");
-    },
-
     template: surveyOneTemplate,
     selected:[],
 

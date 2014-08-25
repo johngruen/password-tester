@@ -16,8 +16,7 @@ define([
       'focus .invalid,.invalid-row': 'clearInvalidEl',
       'change .show-password': 'recordPasswordVisibilityChange',
       'focus #password,#show-password': 'triggerPopUp',
-      'click .flow-start':'triggerFlow',
-      'input.password':'recordPaste'
+      'click .flow-start':'triggerFlow'
     },
 
     template: signupTemplate,
@@ -27,6 +26,9 @@ define([
     },
 
     afterRender: function() {
+      this.$el.find('.password').on('paste',function(){
+        UserMetadata.pwdPasted = 1;
+      })
       if (!UserMetadata.version || UserMetadata.version === 0) { 
         return; 
       }

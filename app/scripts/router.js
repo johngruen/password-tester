@@ -90,7 +90,6 @@ function (
 
     showView: function(viewToShow,advanceURL) {
         if (this.currentView) {
-          console.log('destroyed: ' + this.currentView.name);
           this.currentView.destroy();
         }
         viewToShow.render();

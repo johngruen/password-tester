@@ -13,13 +13,14 @@ define([
       'change .show-password': 'recordPasswordVisibilityChange',
       'click .invalid': 'clearInvalidEl',
       'focus .invalid': 'clearInvalidEl',
-      'input.password':'recordPaste'
     },
 
     template: confirmTemplate,
 
-    recordPaste: function() {
-      UserMetadata.confirmPwdPasted = 1;
+    afterRender: function() {
+      this.$el.find('.password').on('paste',function(){
+        UserMetadata.confirmPwdPasted = 1;
+      })
     },
 
     recordPasswordVisibilityChange: function(event) {

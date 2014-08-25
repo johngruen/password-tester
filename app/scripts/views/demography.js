@@ -27,9 +27,6 @@ define([
           allClear++;
           $(".error").html('please complete the survey').slideDown(200);
           }
-        else if (a === '2') {
-          //that.fail();
-        }
       }); 
       if (allClear !== 0) {
         return false;
