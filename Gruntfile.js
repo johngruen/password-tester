@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib: {
-        src: ['app/scripts/*.js','app/scripts/views/*.js','app/scripts/views/mne/*.js','app/scripts/views/passphrase/*.js']
+        src: ['app/*.js','app/scripts/*.js','app/scripts/views/*.js','app/scripts/views/mne/*.js','app/scripts/views/passphrase/*.js']
       },
     },
     csslint: {
@@ -46,16 +46,16 @@ module.exports = function(grunt) {
           livereload: true
         }
       },
-      scripts: {
-        files: ['app/scripts/*.js','app/scripts/views/*.js'],
-        options: {
-          livereload: true
-        }
-      }
+      // scripts: {
+      //   files: ['app/scripts/*.js','app/scripts/views/*.js'],
+      //   options: {
+      //     livereload: true
+      //   }
+      // }
     },
     nodemon: {
       dev: {
-        script: 'app.js'
+        script: 'app/app.js'
       }
     }
   });

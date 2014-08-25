@@ -1,5 +1,87 @@
-<p><a href="/version0.txt">Control Data</a></p>
-<p><a href="/version1.txt">Passphrase Data</a></p>
-<p><a href="/version2.txt">Mnemonic Data</a></p>
-<p><a href="/key.html">Data Key</a></p>
-<p><a href="/common.txt">Common passwords</a></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DATA</title>
+
+  <style>
+    body {
+      font-size: 10px;
+      font-family: sans-serif;
+      margin:0;
+    }  
+
+    .table {
+      width:4700px;
+      background: #eee;
+      margin:10px;
+    }
+
+    span {
+      width:70px;
+      padding:6px;
+      display: inline-block;
+      border:none;
+      overflow:hidden;
+      content-overflow: '...';
+    }
+
+
+  </style>
+
+</head>
+<body> 
+
+<h1>Control Data</h1>
+<div id="control-data" class='table'></div> 
+<h1>Passphrase Data</h1>
+<div id="passphrase-data" class='table'></div> 
+<h1>Mnemonic Data</h1>
+<div id="menmonnic-data" class='table'></div> 
+
+  <script type="text/javascript" src="../scripts/vendor/jquery/dist/jquery.js"></script>
+  <script>
+
+  $(document).ready(function(){
+      var dataSets = {};
+
+      for (var i = 0; i < 3; i++) {
+        $.ajax({
+            url: ["./version"+i+".txt"],
+            async: false,
+            success: function (data){
+                dataSets[i] = data.split(',');
+                if (i === 2) { 
+                  drawTables(38); 
+                }
+            }
+        });
+      }
+
+      function drawTables(l) {
+        for (set in dataSets) {
+          var el = $('.table').eq(set);
+          var toAppend = ''; console.log(dataSets[set].length)
+          for(var i = 0; i < dataSets[set].length-1; i ++) {
+            if (i === 0) {
+              toAppend += ('<div><span></span><span>' + dataSets[set][i] + '</span>');
+            }
+            else if ( i % 38 === 0) {
+             toAppend += ('</div><div><span>'+ i/38+'</span><span>' + dataSets[set][i] + '</span>')
+            }
+            else {
+              toAppend += ('<span>' + dataSets[set][i]  + '</span>');
+            }
+          }
+          el.append(toAppend); 
+          el.find("div:eq(0)").css({'background':'#ddd','font-weight':'bold','border':'1px solid #ccc','font-size':'9px'});
+        }
+      }
+
+  });
+
+     
+  </script>
+</body>
+</html>

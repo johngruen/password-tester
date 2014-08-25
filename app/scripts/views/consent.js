@@ -23,15 +23,16 @@ define([
       });
     var psid = this.getParameterByName('psid');
     if(psid) {
+      console.log(psid);
       UserMetadata.psid = psid;
     }
     },
     
     getParameterByName:function (name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search); //jshint ignore:line
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
    },
 
     validateRadio: function(els) {

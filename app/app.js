@@ -1,17 +1,16 @@
 //NONONONONO
 var express= require('express');
 var app = express();
-var path = require('path');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require('fs');
-var url = require('url');
+//var path = require('path');
+//var url = require('url');
+
 var users = [];
 
 
 app.get('/',function(req,res){
- console.log(req.url);
- console.log(req.query);
   if(req.query.psid || req.query.test) {
     if(req.query.psid) {
       users.push(req.query.psid);
@@ -27,7 +26,6 @@ app.get('/',function(req,res){
 app.use(express.static(__dirname));
 
 app.get('*', function(req, res){
-  console.log(req.url);
   res.sendFile(__dirname + '/index.html');
 });
 
@@ -79,9 +77,9 @@ var keyString = keys.join(',');
 var totalSuccess = 0;
 var typeCount = [0,0,0];
 
-fs.writeFile('data/version0.txt',keyString +  ',');
-fs.writeFile('data/version1.txt',keyString  + ',');
-fs.writeFile('data/version2.txt',keyString  + ',');
+fs.writeFile(__dirname + '/data/version0.txt',keyString +  ',',function(){});
+fs.writeFile(__dirname + '/data/version1.txt',keyString  + ',',function(){});
+fs.writeFile(__dirname + '/data/version2.txt',keyString  + ',',function(){});
 writeSuccessFile();
 
 
@@ -91,7 +89,7 @@ function init() {
   if(totalSuccess <= 150) {
     return generateType();
   }
-};
+}
 
 function generateType() {
   var t = Math.floor(Math.random() * 3);
@@ -99,12 +97,12 @@ function generateType() {
     return t;
   }
   else {
-    generateType()
+    generateType();
   }
 }
 
 function writeSuccessFile() {
-  fs.writeFile('data/count.txt', totalSuccess + "/ " + typeCount.join(','));
+  fs.writeFile(__dirname + '/data/count.txt', totalSuccess + "/ " + typeCount.join(','),function(){});
 }
 
 function incSuccess(i) {
@@ -125,7 +123,7 @@ io.on('connection',function(socket){
 
   socket.on('sendControlData',function(data){
     var dataString = data + ',';
-    fs.appendFile('data/version0.txt',dataString,function(err) {
+    fs.appendFile(__dirname + '/data/version0.txt',dataString,function(err) {
       if(err) {
         console.log('error');
         socket.emit('error');
@@ -139,7 +137,7 @@ io.on('connection',function(socket){
 
   socket.on('sendPassphraseData',function(data){
     var dataString = data + ',';
-    fs.appendFile('data/version1.txt',dataString,function(err) {
+    fs.appendFile(__dirname + '/data/version1.txt',dataString,function(err) {
       if(err) {
         console.log('error');
         socket.emit('error');
@@ -155,7 +153,7 @@ io.on('connection',function(socket){
 
   socket.on('sendMnemonicData',function(data){
     var dataString = data + ',';
-    fs.appendFile('data/version2.txt',dataString,function(err) {
+    fs.appendFile(__dirname + '/data/version2.txt',dataString,function(err) {
       if(err) {
         console.log('error');
         socket.emit('error');

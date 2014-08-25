@@ -7,18 +7,6 @@ var substitutes = [['t','7'],['T','7'],['l','1'],
                   ['a','@'],['A','@'],['S','5'],
                   ['s','$'],['i','!'],['o','0'],
                   ['O','0']];
-
-function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split('=');
-        if (decodeURIComponent(pair[0]) === variable) {
-            return decodeURIComponent(pair[1]);
-        }
-    }
-    //console.log('Query variable %s not found', variable);
-}
 /* jshint ignore:end */
 
 

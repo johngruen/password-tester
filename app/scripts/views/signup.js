@@ -139,13 +139,13 @@ define([
     generateMatchData: function() {
       var a = 0;
       if (UserMetadata.version === 1) {
-        if(this.$el.find(".ppi_1").text() == UserMetadata.password) {a = 1;}
-        else if (this.$el.find(".ppi_2").text() == UserMetadata.password) {a = 2;}
-        else if (this.$el.find(".ppi_3").text() == UserMetadata.password) {a = 3;}
+        if(this.$el.find(".ppi_1").text() === UserMetadata.password) {a = 1;}
+        else if (this.$el.find(".ppi_2").text() === UserMetadata.password) {a = 2;}
+        else if (this.$el.find(".ppi_3").text() === UserMetadata.password) {a = 3;}
       }
       else if (UserMetadata.version === 2) {
-        if(this.$el.find(".ppi_2").text() == UserMetadata.password) {a = 1;}
-        else if (this.$el.find(".ppi_3").text() == UserMetadata.password) {a = 2;}
+        if(this.$el.find(".ppi_2").text() === UserMetadata.password) {a = 1;}
+        else if (this.$el.find(".ppi_3").text() === UserMetadata.password) {a = 2;}
       }
       UserMetadata.flowPasswordMatches = a;
     },

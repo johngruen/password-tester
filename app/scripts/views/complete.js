@@ -90,15 +90,12 @@ define([
       // UserMetadata.csSurvey1=34;
       // UserMetadata.csSurvey2=35;
       // UserMetadata.freeResponse1=36;
-      // UserMetadata.freeResponse2=37;
+      //  UserMetadata.freeResponse2=37;
 
       var a = this.bounceData();
-      console.log(a);
       if (a) {
-        console.log(this.orderedUserData.join(','));
         var that = this;
         var socket = io.connect();
-        console.log(socket);
         if (this.orderedUserData[1] === 0) {
           socket.emit('sendControlData', this.orderedUserData.join(','));
         }
@@ -109,12 +106,13 @@ define([
           socket.emit('sendMnemonicData', this.orderedUserData.join(','));
         }
         socket.on('success',function(){
+          console.log("pass");
           that.pass();
         });
-        socket.on('error'),function(){
-          console.log('err')
-        //that.fail();
-        }
+        socket.on('error',function(){
+          console.log("fail");
+          that.fail();
+        });
       }
     },
 
@@ -122,8 +120,7 @@ define([
       for(var i = 0; i < this.expectedKeys.length; i ++) {
         var s = this.expectedKeys[i];
         if(typeof UserMetadata[s] === "undefined") {
-          console.log(s);
-          this.fail();
+          console.log("fail via bounce")
           return false;
         }
         else {

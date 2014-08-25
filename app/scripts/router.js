@@ -54,11 +54,23 @@ function (
     };
   }
   
+  function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split('&');
+      for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          if (decodeURIComponent(pair[0]) === variable) {
+              return decodeURIComponent(pair[1]);
+          }
+      }
+      //console.log('Query variable %s not found', variable);
+  }
+  
   var BigRouter  = Backbone.Router.extend({
     routes: {
       '': prepView(consentView,'intro'),
       'intro': prepView(introView,'signup'),
-      'signup': prepFlowView(signupView,'survey-one',UserMetadata.version),
+      'signup': prepFlowView(signupView,'survey-one'),
       'pp-one':prepView(ppOneView,'pp-two'),
       'pp-two':prepView(ppTwoView,'signup'),
       'mn-one':prepView(mnOneView,'mn-two'),
@@ -89,7 +101,7 @@ function (
         this.currentView = viewToShow;
       },
 
-      showFlowView: function(viewToShow,advanceURL,flowURL) {
+      showFlowView: function(viewToShow,advanceURL) {
         if (this.currentView) {
           this.currentView.destroy();
         }
@@ -101,12 +113,12 @@ function (
         });
         viewToShow.on('flowAdvance',function(){
           if (UserMetadata.version === 1) { 
-            that.navigate('pp-one',{trigger:true})
+            that.navigate('pp-one',{trigger:true});
           }
           else if (UserMetadata.version === 2) {
-            that.navigate('mn-one',{trigger:true})
+            that.navigate('mn-one',{trigger:true});
           }
-        })
+        });
         this.currentView = viewToShow;
       }
 
